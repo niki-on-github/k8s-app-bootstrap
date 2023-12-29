@@ -9,7 +9,7 @@ Simple init container to bootstrap any application data in k8s by storing a simp
 - `FILEBROWSER_URL` (str): filebrowser url
 - `FILEBROWSER_USER"` (str): filebrowser user
 - `FILEBROWSER_PASSWORD"` (str): filebrowser password
-- `NAME"` (str): data bootstrap archive name without `.tar.gz` extension
+- `NAME` (str): data bootstrap archive name without `.tar.gz` extension
 
 ### Optional
 
