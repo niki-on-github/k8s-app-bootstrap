@@ -1,6 +1,7 @@
 import asyncio
 import aiohttp
 import os
+import time
 
 from filebrowser_client import FilebrowserClient
 
@@ -28,8 +29,14 @@ def main():
         os.remove(bootstrapArchive)      
         
     client = FilebrowserClient(url, user, password, insecure=True)
-    asyncio.run(client.connect())
 
+    try:
+        asyncio.run(client.connect())
+    except aiohttp.client_exceptions.ClientConnectorError:
+        print(f"connection to {url} failed, wait 60 seconds...")
+        time.sleep(60)
+        asyncio.run(client.connect())
+            
     try:
         print(f"download {bootstrapArchive}...")
         asyncio.run(client.download(".", f"/{filebrowserDir}/{bootstrapArchive}"))
