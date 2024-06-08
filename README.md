@@ -1,5 +1,8 @@
 # K8S App Bootstrap
 
+> [!WARNING]  
+> This repository code was used to switch from my docker based setup to k3s. After moving to k8s, the code is no longer needed by me and therefore will not be maintained.
+
 Simple init container to bootstrap any application data in k8s by storing a simple `tar.gz` archive in selfhosted [filebrowser](https://github.com/filebrowser/filebrowser).
 
 ## ENV Vars
